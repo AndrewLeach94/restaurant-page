@@ -1,5 +1,16 @@
+const removePreviousContent = () => {
+    const contentArea = document.querySelector("#content");
+    contentArea.removeChild(contentArea.firstChild);
+}
+
 const homePage = () => {
     const contentArea = document.querySelector("#content");
+
+    //remove the previous content except if it's on page load
+    if(contentArea.children.length != 0) {
+        removePreviousContent();
+    }
+
     const homeContentArea = document.createElement("div");
     homeContentArea.id = "content_home";
     contentArea.appendChild(homeContentArea);
