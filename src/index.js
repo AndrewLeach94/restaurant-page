@@ -1,5 +1,5 @@
 import homePage from './home.js';
-import menuPage from './menu.js';
+import MenuPage from './menu.js';
 
 const navigation = (() => {
     const contentArea = document.querySelector("#content")
@@ -12,7 +12,7 @@ const navigation = (() => {
 
     const menu = (() => {
         const menuLink = document.querySelector("#link_menu");
-        menuLink.addEventListener("click", () => menuPage());    
+        menuLink.addEventListener("click", () => MenuPage());    
     })();
 
     return {home, menu};
