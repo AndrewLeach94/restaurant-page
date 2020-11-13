@@ -6,5 +6,7 @@ module.exports = {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
   },
-  watch: true
+  watch: true,
+  mode: 'development',
+  // devtool: 'source-map',
 };
