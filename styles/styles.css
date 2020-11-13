@@ -134,12 +134,17 @@ nav li {
 --------------------------------------------------------------------------------------------- */
 .animateOut {
     opacity: 0%;
-    transition: all .5s;
+    transition: all .2s;
 }
 
 .animateIn {
+    animation: .5s slideIn;
     opacity: 100%;
-    transition: all .5s;
+    transition: all .2s;
+}
+
+.fadeIn {
+    animation: .2s animateIn;
 }
 
 @keyframes animateIn {
@@ -149,6 +154,18 @@ nav li {
 
     to {
         opacity: 100%;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0%;
+        transform: translate(-10px, 0);
+    }
+
+    to {
+        opacity: 100%;
+        transform: translate(0, 0);
     }
 }
 
