@@ -32,7 +32,7 @@ const MenuPage = () => {
 
     //build the menu heading
     const heading = document.createElement("h1");
-    heading.id = "menu_heading-primary";
+    heading.className = "heading-primary";
     heading.textContent = "Menu";
     menuParentGrid.appendChild(heading);
 
@@ -46,21 +46,21 @@ const MenuPage = () => {
     const buttonAppetizer = document.createElement("button");
     buttonAppetizer.type = "button";
     buttonAppetizer.id = "menu_nav-appetizer";
-    buttonAppetizer.id = "menu_nav-button";
+    buttonAppetizer.className = "menu_nav-button-selected";
     buttonAppetizer.textContent = "Appetizers";
     navContainer.appendChild(buttonAppetizer);
     
     const buttonEntree = document.createElement("button");
     buttonEntree.type = "button";
     buttonEntree.id = "menu_nav-entree";
-    buttonEntree.id = "menu_nav-button";
+    buttonEntree.className = "menu_nav-button";
     buttonEntree.textContent = "Entrees";
     navContainer.appendChild(buttonEntree);
     
     const buttonDessert = document.createElement("button");
     buttonDessert.type = "button";
     buttonDessert.id = "menu_nav-dessert";
-    buttonDessert.id = "menu_nav-button";
+    buttonDessert.className = "menu_nav-button";
     buttonDessert.textContent = "Desserts";
     navContainer.appendChild(buttonDessert);
 
@@ -345,10 +345,40 @@ const MenuPage = () => {
         const animateIn = () => itemParent.className = "animateIn";
     };
 
+    //change button state functions
+    const changeAppetizerState = () => {
+        buttonAppetizer.className = "menu_nav-button-selected";
+        buttonEntree.className = "menu_nav-button";
+        buttonDessert.className = "menu_nav-button";
+    }
+    
+    const changeEntreeState = () => {
+        buttonAppetizer.className = "menu_nav-button";
+        buttonEntree.className = "menu_nav-button-selected";
+        buttonDessert.className = "menu_nav-button";
+    }
+    
+    const changeDessertState = () => {
+        buttonAppetizer.className = "menu_nav-button";
+        buttonEntree.className = "menu_nav-button";
+        buttonDessert.className = "menu_nav-button-selected";
+    }
+
     //add button event listeners 
-    buttonEntree.addEventListener("click", () => populateEntrees());
-    buttonDessert.addEventListener("click", () => populateDesserts())
-    buttonAppetizer.addEventListener("click", () => populateAppetizers());
+    buttonEntree.addEventListener("click", () => {
+        populateEntrees() 
+        changeEntreeState();
+    })
+
+    buttonDessert.addEventListener("click", () => {
+        populateDesserts()
+        changeDessertState()
+    })
+    buttonAppetizer.addEventListener("click", () => {
+         populateAppetizers()
+         changeAppetizerState();
+    })
+    
 
     //load the appetizers by default
     const initialLoad = (() => populateAppetizers())();

@@ -1,5 +1,6 @@
 import homePage from './home.js';
 import MenuPage from './menu.js';
+import ContactPage from './contact.js';
 
 const navigation = (() => {
     const contentArea = document.querySelector("#content")
@@ -14,8 +15,13 @@ const navigation = (() => {
         const menuLink = document.querySelector("#link_menu");
         menuLink.addEventListener("click", () => MenuPage());    
     })();
+    
+    const contact = (() => {
+        const contactLink = document.querySelector("#link_contact");
+        contactLink.addEventListener("click", () => ContactPage());    
+    })();
 
-    return {home, menu};
+    return {home, menu, contact};
 })();
 
 //initial page load
