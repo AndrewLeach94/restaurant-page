@@ -40,6 +40,12 @@ const ContactPage = () => {
         header.id = "header_contact";
         header.textContent = "Contact Us";
         contactContent.appendChild(header);
+
+        //add image block
+        const imageBlock = document.createElement("figure")
+        imageBlock.className = "image-block";
+        contactContent.appendChild(imageBlock);
+        
         
         //build operating hours block
         const operatingHoursBlock = (() => {

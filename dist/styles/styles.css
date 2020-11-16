@@ -28,6 +28,13 @@ header {
     z-index: 100;
 }
 
+.nav_link {
+    font-size: 1rem;
+    cursor: pointer;
+    font-family: 'Cabin', sans-serif;
+    font-weight: 400;
+}
+
 nav ul {
     display: flex;
     flex-direction: row;
@@ -122,9 +129,7 @@ margin: 0px 100px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 50px;
-    background-color: #300055;
     border-radius: 3px;
-    box-shadow: 0px 0px 10px #0000004f;
     padding: 20px;
 }
 
@@ -163,7 +168,7 @@ margin: 0px 100px;
     transition: all 0.2s linear;
 }
 
-.menu_parent-grid h4 {
+.item_container h4 {
     font-size: 1.3rem;
 }
 
@@ -193,8 +198,33 @@ margin: 0px 100px;
 }
 
 .contact_info-block h3 {
-    font-size: 1.3rem;
+    font-size: 1.7rem;
 }
+
+.contact_info-block a {
+    display: block;
+    color: var(--font_primary);
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-decoration: none;
+    margin: 20px 0px;
+}
+
+.image-block {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url("../images/restaurant.webp");
+    background-position: center;
+    margin: 0;
+    z-index: -100;
+    opacity: 15%;
+}
+
 
 
 /* ---------------------------------------------------------------------------------------------
