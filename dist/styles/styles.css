@@ -118,6 +118,7 @@ nav li {
     border-radius: 50px;
     color: #632691;
     background-color: var(--font_primary);
+    cursor: pointer;
 }
 
 #container_image-home {
