@@ -69,7 +69,7 @@ const MenuPage = () => {
     itemParent.id = "menu_item-parent";
     menuParentGrid.appendChild(itemParent);
 
-    // build the menu item objects
+    // customize the menu items here
     const appetizers = [
         {
             name: "Seafood Gumbo",
