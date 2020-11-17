@@ -1,3 +1,6 @@
+import MenuPage from './menu.js';
+import ContactPage from './contact.js';
+
 const removePreviousContent = () => {
     const contentArea = document.querySelector("#content");
     contentArea.removeChild(contentArea.firstChild);
@@ -32,16 +35,19 @@ const homePage = () => {
     ctaContainer.appendChild(ctaMessage);
 
     //add CTA buttons
+
     const ctaPrimary = document.createElement("button");
     ctaPrimary.type = "button";
     ctaPrimary.className = "cta_primary";
     ctaPrimary.textContent = "View Menu";
+    ctaPrimary.addEventListener("click", () => MenuPage())
     ctaContainer.appendChild(ctaPrimary);
 
     const ctaSecondary = document.createElement("button");
     ctaSecondary.type = "button";
     ctaSecondary.className = "cta_secondary";
     ctaSecondary.textContent = "Get in Touch!";
+    ctaSecondary.addEventListener("click", () => ContactPage())
     ctaContainer.appendChild(ctaSecondary);
 
     //add social media container

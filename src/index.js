@@ -6,6 +6,11 @@ const navigation = (() => {
     const contentArea = document.querySelector("#content")
 
     //add event listeners
+    const logo = document.querySelector(".logo");
+    logo.addEventListener("click", () => homePage())
+
+
+
     const home = (() => {
         const homeLink = document.querySelector("#link_home");
         homeLink.addEventListener("click", () => homePage());
